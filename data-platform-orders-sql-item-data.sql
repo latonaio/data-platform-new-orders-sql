@@ -99,7 +99,9 @@ CREATE TABLE `data_platform_orders_item_data`
     `ItemBlockStatus`                                   tinyint(1) DEFAULT NULL,
     `ItemDeliveryBlockStatus`                           tinyint(1) DEFAULT NULL,
     `ItemBillingBlockStatus`                            tinyint(1) DEFAULT NULL,
-
+    `ItemIsCancelled`                                   tinyint(1) DEFAULT NULL,
+    `ItemIsDeleted`                                     tinyint(1) DEFAULT NULL,
+    
     PRIMARY KEY (`OrderID`, `OrderItem`),
     
     CONSTRAINT `DataPlatformOrdersItemData_fk` FOREIGN KEY (`OrderID`) REFERENCES `data_platform_orders_header_data` (`OrderID`),

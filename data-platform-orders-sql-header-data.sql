@@ -45,6 +45,8 @@ CREATE TABLE `data_platform_orders_header_data`
   `HeaderBlockStatus`                tinyint(1) DEFAULT NULL,
   `HeaderDeliveryBlockStatus`        tinyint(1) DEFAULT NULL,
   `HeaderBillingBlockStatus`         tinyint(1) DEFAULT NULL,
+  `HeaderIsCancelled`                tinyint(1) DEFAULT NULL,
+  `HeaderIsDeleted`                  tinyint(1) DEFAULT NULL,
 
     PRIMARY KEY (`OrderID`),
 
