@@ -2,7 +2,7 @@ CREATE TABLE `data_platform_orders_item_schedule_line_data`
 (
   `OrderID`                                       int(16) NOT NULL,
   `OrderItem`                                     int(6) NOT NULL,
-  `ScheduleLine`                                  int(3) NOT NULL,
+  `ScheduleLine`                                  int(6) NOT NULL,
   `SupplyChainRelationshipID`                     int(16) NOT NULL,
   `SupplyChainRelationshipStockConfPlantID`       int(4) NOT NULL,
   `Product`                                       varchar(40) NOT NULL,
@@ -21,6 +21,7 @@ CREATE TABLE `data_platform_orders_item_schedule_line_data`
   `StockIsFullyConfirmed`                         tinyint(1) DEFAULT NULL,
   `PlusMinusFlag`                                 varchar(1) NOT NULL,
   `ItemScheduleLineDeliveryBlockStatus`           tinyint(1) DEFAULT NULL,
+  `IsMarkedForDeletion`                           tinyint(1) DEFAULT NULL,
 
   PRIMARY KEY (`OrderID`, `OrderItem`, `ScheduleLine`),
     
