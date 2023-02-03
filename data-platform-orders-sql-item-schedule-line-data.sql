@@ -17,6 +17,7 @@ CREATE TABLE `data_platform_orders_item_schedule_line_data`
   `OrderQuantityInBaseUnit`                       float(15) NOT NULL,
   `ConfirmedOrderQuantityByPDTAvailCheck`         float(15) NOT NULL,
   `DeliveredQuantityInBaseUnit`                   float(15) DEFAULT NULL,
+  `UndeliveredQuantityInBaseUnit`                 float(15) DEFAULT NULL,
   `OpenConfirmedQuantityInBaseUnit`               float(15) DEFAULT NULL,
   `StockIsFullyConfirmed`                         tinyint(1) DEFAULT NULL,
   `PlusMinusFlag`                                 varchar(1) NOT NULL,
