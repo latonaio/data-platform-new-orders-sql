@@ -22,6 +22,7 @@ CREATE TABLE `data_platform_orders_item_schedule_line_data`
   `StockIsFullyConfirmed`                         tinyint(1) DEFAULT NULL,
   `PlusMinusFlag`                                 varchar(1) NOT NULL,
   `ItemScheduleLineDeliveryBlockStatus`           tinyint(1) DEFAULT NULL,
+  `IsCancelled`                                   tinyint(1) DEFAULT NULL,
   `IsMarkedForDeletion`                           tinyint(1) DEFAULT NULL,
 
   PRIMARY KEY (`OrderID`, `OrderItem`, `ScheduleLine`),

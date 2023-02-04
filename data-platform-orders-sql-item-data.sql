@@ -109,8 +109,8 @@ CREATE TABLE `data_platform_orders_item_data`
     `ItemBlockStatus`                                   tinyint(1) DEFAULT NULL,
     `ItemDeliveryBlockStatus`                           tinyint(1) DEFAULT NULL,
     `ItemBillingBlockStatus`                            tinyint(1) DEFAULT NULL,
-    `ItemIsCancelled`                                   tinyint(1) DEFAULT NULL,
-    `ItemIsDeleted`                                     tinyint(1) DEFAULT NULL,
+    `IsCancelled`                                       tinyint(1) DEFAULT NULL,
+    `IsMarkedForDeletion`                               tinyint(1) DEFAULT NULL,
     
     PRIMARY KEY (`OrderID`, `OrderItem`),
     
