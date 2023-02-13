@@ -14,7 +14,8 @@ CREATE TABLE `data_platform_orders_item_schedule_line_data`
   `StockConfirmationPlantBatchValidityEndDate`    date DEFAULT NULL,
   `RequestedDeliveryDate`                         date NOT NULL,
   `ConfirmedDeliveryDate`                         date NOT NULL,
-  `OrderQuantityInBaseUnit`                       float(15) NOT NULL,
+  `ScheduleLineOrderQuantity`                     float(15) NOT NULL,
+  `OriginalOrderQuantityInBaseUnit`               float(15) NOT NULL,
   `ConfirmedOrderQuantityByPDTAvailCheck`         float(15) NOT NULL,
   `DeliveredQuantityInBaseUnit`                   float(15) DEFAULT NULL,
   `UndeliveredQuantityInBaseUnit`                 float(15) DEFAULT NULL,
@@ -23,7 +24,7 @@ CREATE TABLE `data_platform_orders_item_schedule_line_data`
   `PlusMinusFlag`                                 varchar(1) NOT NULL,
   `ItemScheduleLineDeliveryBlockStatus`           tinyint(1) DEFAULT NULL,
   `IsCancelled`                                   tinyint(1) DEFAULT NULL,
-  `IsDeleted`                                     tinyint(1) DEFAULT NULL,
+  `IsMarkedForDeletion`                           tinyint(1) DEFAULT NULL,
 
   PRIMARY KEY (`OrderID`, `OrderItem`, `ScheduleLine`),
     
