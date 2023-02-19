@@ -31,6 +31,7 @@ CREATE TABLE `data_platform_orders_header_data`
   `PricingDate`                      date NOT NULL,
   `PriceDetnExchangeRate`            float(8) DEFAULT NULL,
   `RequestedDeliveryDate`            date NOT NULL,
+  `RequestedDeliveryTime`            time NOT NULL,
   `HeaderCompleteDeliveryIsDefined`  tinyint(1) DEFAULT NULL,
   `Incoterms`                        varchar(4) DEFAULT NULL,
   `PaymentTerms`                     varchar(4) NOT NULL,
