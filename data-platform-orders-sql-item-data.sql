@@ -59,6 +59,7 @@ CREATE TABLE `data_platform_orders_item_data`
     `ServicesRenderingDate`                             date DEFAULT NULL,
     `OrderQuantityInBaseUnit`                           float(15) NOT NULL,
     `OrderQuantityInDeliveryUnit`                       float(15) NOT NULL,
+    `QuantityPerPackage`                                float(15) NOT NULL,
     `StockConfirmationPolicy`                           varchar(4) DEFAULT NULL,
     `StockConfirmationStatus`                           varchar(2) DEFAULT NULL,
     `ConfirmedOrderQuantityInBaseUnit`                  float(15) DEFAULT NULL,
