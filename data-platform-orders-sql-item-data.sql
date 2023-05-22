@@ -15,6 +15,8 @@ CREATE TABLE `data_platform_orders_item_data`
     `ProductStandardID`                                 varchar(18) NOT NULL,
     `ProductGroup`                                      varchar(9) DEFAULT NULL,
     `BaseUnit`                                          varchar(3) NOT NULL,
+    `BillOfMaterial`                                    int(16) DEFAULT NULL,
+    `BillOfMaterialItem`                                int(6) DEFAULT NULL,
     `PricingDate`                                       date NOT NULL,
     `PriceDetnExchangeRate`                             float(8) DEFAULT NULL,
     `RequestedDeliveryDate`                             date NOT NULL,
@@ -100,7 +102,8 @@ CREATE TABLE `data_platform_orders_item_data`
     `PaymentDueDate`                                    date DEFAULT NULL,
     `NetPaymentDays`                                    int(3) DEFAULT NULL,
     `PaymentMethod`                                     varchar(1) NOT NULL,
-    `Project`                                           varchar(24) DEFAULT NULL,
+    `Project`                                           int(16) DEFAULT NULL,
+    `WBSElement`                                        int(8) DEFAULT NULL,
     `AccountingExchangeRate`                            float(8) DEFAULT NULL,
     `ReferenceDocument`                                 int(16) DEFAULT NULL,
     `ReferenceDocumentItem`                             int(6) DEFAULT NULL,
@@ -113,6 +116,9 @@ CREATE TABLE `data_platform_orders_item_data`
     `TaxRate`                                           float(6) DEFAULT NULL,
     `CountryOfOrigin`                                   varchar(3) DEFAULT NULL,
     `CountryOfOriginLanguage`                           varchar(2) DEFAULT NULL,
+    `Equipment`                                         int(20) DEFAULT NULL,
+    `PlannedFreight`                                    int(16) DEFAULT NULL,
+    `FreightOrder`                                      int(16) DEFAULT NULL,
     `ItemBlockStatus`                                   tinyint(1) DEFAULT NULL,
     `ItemDeliveryBlockStatus`                           tinyint(1) DEFAULT NULL,
     `ItemBillingBlockStatus`                            tinyint(1) DEFAULT NULL,
@@ -131,6 +137,8 @@ CREATE TABLE `data_platform_orders_item_data`
     CONSTRAINT `DataPlatformOrdersItemDataSupplyChainRelationshipProductionPlantRelationProduct_fk` FOREIGN KEY (`SupplyChainRelationshipID`, `SupplyChainRelationshipProductionPlantID`, `Buyer`, `Seller`, `ProductionPlantBusinessPartner`, `ProductionPlant`, `Product`) REFERENCES `data_platform_supply_chain_relationship_production_plant_relation_product_data` (`SupplyChainRelationshipID`, `SupplyChainRelationshipProductionPlantID`, `Buyer`, `Seller`, `ProductionPlantBusinessPartner`, `ProductionPlant`, `Product`),
     CONSTRAINT `DataPlatformOrdersItemDataProductGroup_fk` FOREIGN KEY (`ProductGroup`) REFERENCES `data_platform_product_group_product_group_data` (`ProductGroup`),
     CONSTRAINT `DataPlatformOrdersItemDataBaseUnit_fk` FOREIGN KEY (`BaseUnit`) REFERENCES `data_platform_quantity_unit_quantity_unit_data` (`QuantityUnit`),
+    CONSTRAINT `DataPlatformOrdersItemDataBillOfMaterial_fk` FOREIGN KEY (`BillOfMaterial`) REFERENCES `data_platform_bill_of_material_header_data` (`BillOfMaterial`),
+    CONSTRAINT `DataPlatformOrdersItemDataBillOfMaterialItem_fk` FOREIGN KEY (`BillOfMaterial`, `BillOfMaterialItem`) REFERENCES `data_platform_bill_of_material_item_data` (`BillOfMaterial`, `BillOfMaterialItem`),
     CONSTRAINT `DataPlatformOrdersItemDataDeliverToPlantTimeZone_fk` FOREIGN KEY (`DeliverToPlantTimeZone`) REFERENCES `data_platform_time_zone_time_zone_data` (`TimeZone`),
     CONSTRAINT `DataPlatformOrdersItemDataDeliverToPlantStorageLocation_fk` FOREIGN KEY (`DeliverToParty`, `DeliverToPlant`, `DeliverToPlantStorageLocation`) REFERENCES `data_platform_plant_general_data` (`BusinessPartner`, `Plant`, `StorageLocation`),
     CONSTRAINT `DataPlatformOrdersItemDataDeliverToPlantBatch_fk` FOREIGN KEY (`DeliverToParty`, `DeliverToPlant`, `DeliverToPlantBatch`) REFERENCES `data_platform_batch_master_record_batch_data` (`BusinessPartner`, `Plant`, `Batch`),
@@ -149,9 +157,13 @@ CREATE TABLE `data_platform_orders_item_data`
     CONSTRAINT `DataPlatformOrdersItemDataIncoterms_fk` FOREIGN KEY (`Incoterms`) REFERENCES `data_platform_incoterms_incoterms_data` (`Incoterms`),
     CONSTRAINT `DataPlatformOrdersItemDataPaymentMethod_fk` FOREIGN KEY (`PaymentMethod`) REFERENCES `data_platform_payment_method_payment_method_data` (`PaymentMethod`),
     CONSTRAINT `DataPlatformOrdersItemDataProject_fk` FOREIGN KEY (`Project`) REFERENCES `data_platform_project_project_data` (`Project`),
+    CONSTRAINT `DataPlatformOrdersItemDataWBSElement_fk` FOREIGN KEY (`Project`, `WBSElement`) REFERENCES `data_platform_project_wbs_element_data` (`Project`, `WBSElement`),
     CONSTRAINT `DataPlatformOrdersItemDataTaxCode_fk` FOREIGN KEY (`TaxCode`) REFERENCES `data_platform_tax_code_tax_code_data` (`TaxCode`),
     CONSTRAINT `DataPlatformOrdersItemDataCountryOfOrigin_fk` FOREIGN KEY (`CountryOfOrigin`) REFERENCES `data_platform_country_country_data` (`Country`),
-    CONSTRAINT `DataPlatformOrdersItemDataCountryOfOriginLanguage_fk` FOREIGN KEY (`CountryOfOriginLanguage`) REFERENCES `data_platform_language_language_data` (`Language`)
+    CONSTRAINT `DataPlatformOrdersItemDataCountryOfOriginLanguage_fk` FOREIGN KEY (`CountryOfOriginLanguage`) REFERENCES `data_platform_language_language_data` (`Language`),
+    CONSTRAINT `DataPlatformOrdersItemDataEquipment_fk` FOREIGN KEY (`Equipment`) REFERENCES `data_platform_equipment_master_general_data` (`Equipment`),
+    CONSTRAINT `DataPlatformOrdersItemDataPlannedFreight_fk` FOREIGN KEY (`PlannedFreight`) REFERENCES `data_platform_planned_freight_header_data` (`PlannedFreight`),
+    CONSTRAINT `DataPlatformOrdersItemDataFreightOrder_fk` FOREIGN KEY (`FreightOrder`) REFERENCES `data_platform_freight_order_header_data` (`FreightOrder`)
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

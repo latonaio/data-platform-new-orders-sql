@@ -6,7 +6,7 @@ CREATE TABLE `data_platform_orders_item_schedule_line_data`
   `SupplyChainRelationshipID`                       int(16) NOT NULL,
   `SupplyChainRelationshipStockConfPlantID`         int(4) NOT NULL,
   `Product`                                         varchar(40) NOT NULL,
-  `StockConfirmationBussinessPartner`               int(12) NOT NULL,
+  `StockConfirmationBusinessPartner`                int(12) NOT NULL,
   `StockConfirmationPlant`                          varchar(4) NOT NULL,
   `StockConfirmationPlantTimeZone`                  varchar(3) DEFAULT NULL,
   `StockConfirmationPlantBatch`                     varchar(10) DEFAULT NULL,
