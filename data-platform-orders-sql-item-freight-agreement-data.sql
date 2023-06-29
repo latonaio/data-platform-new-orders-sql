@@ -18,6 +18,10 @@ CREATE TABLE `data_platform_orders_item_freight_agreement_data`
   `Incoterms`                                       varchar(4) DEFAULT NULL,
   `Project`                                         int(16) DEFAULT NULL,
   `WBSElement`                                      int(8) DEFAULT NULL,
+  `CreationDate`                                    date NOT NULL,
+  `CreationTime`                                    time NOT NULL,
+  `LastChangeDate`                                  date NOT NULL,
+  `LastChangeTime`                                  time NOT NULL,
   `IsCancelled`                                     tinyint(1) DEFAULT NULL,
   `IsMarkedForDeletion`                             tinyint(1) DEFAULT NULL,
 
