@@ -12,7 +12,7 @@ CREATE TABLE `data_platform_orders_item_data`
     `OrderItemTextByBuyer`                              varchar(200) NOT NULL,
     `OrderItemTextBySeller`                             varchar(200) NOT NULL,
     `Product`                                           varchar(40) NOT NULL,
-    `ProductStandardID`                                 varchar(18) NOT NULL,
+    `ProductStandardID`                                 varchar(18) DEFAULT NULL,
     `ProductGroup`                                      varchar(9) DEFAULT NULL,
     `BaseUnit`                                          varchar(3) NOT NULL,
     `BillOfMaterial`                                    int(16) DEFAULT NULL,
