@@ -14,7 +14,7 @@ CREATE TABLE `data_platform_orders_item_pricing_element_data`
   `ConditionRateValueUnit`      int(6) NOT NULL,
   `ConditionScaleQuantity`      int(13) NOT NULL,
   `ConditionCurrency`           varchar(5) NOT NULL,
-  `ConditionQuantity`           float(6) NOT NULL,
+  `ConditionQuantity`           float(15) NOT NULL,
   `TaxCode`                     varchar(1) DEFAULT NULL,
   `ConditionAmount`             float(13) NOT NULL,
   `TransactionCurrency`         varchar(5) NOT NULL,
