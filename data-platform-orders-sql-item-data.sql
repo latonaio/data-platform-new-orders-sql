@@ -161,7 +161,7 @@ CREATE TABLE `data_platform_orders_item_data`
     CONSTRAINT `DPFMOrdersItemDataPaymentMethod_fk` FOREIGN KEY (`PaymentMethod`) REFERENCES `data_platform_payment_method_payment_method_data` (`PaymentMethod`),
     CONSTRAINT `DPFMOrdersItemDataProject_fk` FOREIGN KEY (`Project`) REFERENCES `data_platform_project_project_data` (`Project`),
     CONSTRAINT `DPFMOrdersItemDataWBSElement_fk` FOREIGN KEY (`Project`, `WBSElement`) REFERENCES `data_platform_project_wbs_element_data` (`Project`, `WBSElement`),
-    CONSTRAINT `DPFMOrdersItemDataTaxCode_fk` FOREIGN KEY (`TaxCode`) REFERENCES `data_platform_tax_code_tax_code_data` (`TaxCode`),
+--  CONSTRAINT `DPFMOrdersItemDataTaxCode_fk` FOREIGN KEY (`TaxCode`) REFERENCES `data_platform_tax_code_tax_code_data` (`TaxCode`),
     CONSTRAINT `DPFMOrdersItemDataCountryOfOrigin_fk` FOREIGN KEY (`CountryOfOrigin`) REFERENCES `data_platform_country_country_data` (`Country`),
     CONSTRAINT `DPFMOrdersItemDataCountryOfOriginLanguage_fk` FOREIGN KEY (`CountryOfOriginLanguage`) REFERENCES `data_platform_language_language_data` (`Language`),
     CONSTRAINT `DPFMOrdersItemDataEquipment_fk` FOREIGN KEY (`Equipment`) REFERENCES `data_platform_equipment_master_general_data` (`Equipment`),
