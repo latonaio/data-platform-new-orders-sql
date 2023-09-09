@@ -36,8 +36,11 @@ CREATE TABLE `data_platform_orders_item_schedule_line_data`
     
   CONSTRAINT `DataPlatformOrdersItemScheduleLineData_fk` FOREIGN KEY (`OrderID`, `OrderItem`) REFERENCES `data_platform_orders_item_data` (`OrderID`, `OrderItem`),
   CONSTRAINT `DataPlatformOrdersItemScheduleLineDataProduct_fk` FOREIGN KEY (`Product`) REFERENCES `data_platform_product_master_general_data` (`Product`),
-  CONSTRAINT `DataPlatformOrdersItemScheduleLineDataStockConfirmationPlantTimeZone_fk` FOREIGN KEY (`StockConfirmationPlantTimeZone`) REFERENCES `data_platform_time_zone_time_zone_data` (`TimeZone`),
-  CONSTRAINT `DataPlatformOrdersItemScheduleLineDataStockConfirmationPlantBatch_fk` FOREIGN KEY (`Product`, `StockConfirmationBussinessPartner`, `StockConfirmationPlant`, `StockConfirmationPlantBatch`) REFERENCES `data_platform_batch_master_record_batch_data` (`Product`, `BusinessPartner`, `Plant`, `Batch`)
+  -- CONSTRAINT `DataPlatformOrdersItemScheduleLineDataStockConfirmationPlantTimeZone_fk` FOREIGN KEY (`StockConfirmationPlantTimeZone`) REFERENCES `data_platform_time_zone_time_zone_data` (`TimeZone`),
+  -- too long
+
+  -- CONSTRAINT `DataPlatformOrdersItemScheduleLineDataStockConfirmationPlantBatch_fk` FOREIGN KEY (`Product`, `StockConfirmationBussinessPartner`, `StockConfirmationPlant`, `StockConfirmationPlantBatch`) REFERENCES `data_platform_batch_master_record_batch_data` (`Product`, `BusinessPartner`, `Plant`, `Batch`)
+  -- Key column 'StockConfirmationBussinessPartner' doesn't exist in tableのエラー
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

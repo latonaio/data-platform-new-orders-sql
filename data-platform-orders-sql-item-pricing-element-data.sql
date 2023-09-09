@@ -29,7 +29,7 @@ CREATE TABLE `data_platform_orders_item_pricing_element_data`
   PRIMARY KEY (`OrderID`, `OrderItem`, `PricingProcedureCounter`),
     
   CONSTRAINT `DataPlatformOrdersItemPricingElementData_fk` FOREIGN KEY (`OrderID`, `OrderItem`) REFERENCES `data_platform_orders_item_data` (`OrderID`, `OrderItem`),
-  CONSTRAINT `DataPlatformOrdersItemPricingElementDataSCRID_fk` FOREIGN KEY (`SupplyChainRelationshipID`, `Buyer`, `Seller`) REFERENCES `data_platform_supply_chain_relationship_general_data` (`SupplyChainRelationshipID`, `Buyer`, `Seller`)
-  
+  -- CONSTRAINT `DataPlatformOrdersItemPricingElementDataSCRID_fk` FOREIGN KEY (`SupplyChainRelationshipID`, `Buyer`, `Seller`) REFERENCES `data_platform_supply_chain_relationship_general_data` (`SupplyChainRelationshipID`, `Buyer`, `Seller`)
+  -- テーブルなし
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
