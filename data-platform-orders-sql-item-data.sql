@@ -120,6 +120,8 @@ CREATE TABLE `data_platform_orders_item_data`
     `ItemBlockStatus`                                   tinyint(1) DEFAULT NULL,
     `ItemDeliveryBlockStatus`                           tinyint(1) DEFAULT NULL,
     `ItemBillingBlockStatus`                            tinyint(1) DEFAULT NULL,
+    `ExternalReferenceDocument`                         varchar(100) DEFAULT NULL,
+    `ExternalReferenceDocumentItem`                     varchar(10) DEFAULT NULL,
     `CreationDate`                                      date NOT NULL,
     `CreationTime`                                      time NOT NULL,
     `LastChangeDate`                                    date NOT NULL,
