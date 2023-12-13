@@ -3,6 +3,7 @@ CREATE TABLE `data_platform_orders_item_data`
     `OrderID`                                           int(16) NOT NULL,
     `OrderItem`                                         int(6) NOT NULL,
     `OrderItemCategory`                                 varchar(4) NOT NULL,
+    `OrderStatus`                                       varchar(3) NOT NULL,
     `SupplyChainRelationshipID`                         int(16) NOT NULL,
     `SupplyChainRelationshipDeliveryID`                 int(6) DEFAULT NULL,
     `SupplyChainRelationshipDeliveryPlantID`            int(4) DEFAULT NULL,
