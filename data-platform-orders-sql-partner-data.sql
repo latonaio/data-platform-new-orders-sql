@@ -11,16 +11,17 @@ CREATE TABLE `data_platform_orders_partner_data`
     `Currency`                        varchar(5) DEFAULT NULL,
     `ExternalDocumentID`              varchar(40) DEFAULT NULL,
     `AddressID`                       int(12) DEFAULT NULL,
+    `EmailAddress`                    varchar(200) DEFAULT NULL,
     
     PRIMARY KEY (`OrderID`, `PartnerFunction`, `BusinessPartner`),
     
-    CONSTRAINT `DataPlatformOrdersPartnerData_fk` FOREIGN KEY (`OrderID`) REFERENCES `data_platform_orders_header_data` (`OrderID`),
-    CONSTRAINT `DataPlatformOrdersPartnerDataPartnerFunction_fk` FOREIGN KEY (`PartnerFunction`) REFERENCES `data_platform_partner_function_partner_function_data` (`PartnerFunction`),
-    CONSTRAINT `DataPlatformOrdersPartnerDataBusinessPartner_fk` FOREIGN KEY (`BusinessPartner`) REFERENCES `data_platform_business_partner_general_data` (`BusinessPartner`),
-    CONSTRAINT `DataPlatformOrdersPartnerDataCountry_fk` FOREIGN KEY (`Country`) REFERENCES `data_platform_country_country_data` (`Country`),
-    CONSTRAINT `DataPlatformOrdersPartnerDataLanguage_fk` FOREIGN KEY (`Language`) REFERENCES `data_platform_language_language_data` (`Language`),
-    CONSTRAINT `DataPlatformOrdersPartnerDataCurrency_fk` FOREIGN KEY (`Currency`) REFERENCES `data_platform_currency_currency_data` (`Currency`),
-    CONSTRAINT `DataPlatformOrdersPartnerDataAddressID_fk` FOREIGN KEY (`AddressID`) REFERENCES `data_platform_address_address_data` (`AddressID`)
+    CONSTRAINT `DPFMOrdersPartnerData_fk` FOREIGN KEY (`OrderID`) REFERENCES `data_platform_orders_header_data` (`OrderID`),
+    CONSTRAINT `DPFMOrdersPartnerDataPartnerFunction_fk` FOREIGN KEY (`PartnerFunction`) REFERENCES `data_platform_partner_function_partner_function_data` (`PartnerFunction`),
+    CONSTRAINT `DPFMOrdersPartnerDataBusinessPartner_fk` FOREIGN KEY (`BusinessPartner`) REFERENCES `data_platform_business_partner_general_data` (`BusinessPartner`),
+    CONSTRAINT `DPFMOrdersPartnerDataCountry_fk` FOREIGN KEY (`Country`) REFERENCES `data_platform_country_country_data` (`Country`),
+    CONSTRAINT `DPFMOrdersPartnerDataLanguage_fk` FOREIGN KEY (`Language`) REFERENCES `data_platform_language_language_data` (`Language`),
+    CONSTRAINT `DPFMOrdersPartnerDataCurrency_fk` FOREIGN KEY (`Currency`) REFERENCES `data_platform_currency_currency_data` (`Currency`),
+    CONSTRAINT `DPFMOrdersPartnerDataAddressID_fk` FOREIGN KEY (`AddressID`) REFERENCES `data_platform_address_address_data` (`AddressID`)
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

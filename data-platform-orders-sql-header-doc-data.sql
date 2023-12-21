@@ -11,9 +11,9 @@ CREATE TABLE `data_platform_orders_header_doc_data`
   
     PRIMARY KEY (`OrderID`, `DocType`, `DocVersionID`, `DocID`),
     
-    CONSTRAINT `DataPlatformOrdersHeaderDocData_fk` FOREIGN KEY (`OrderID`) REFERENCES `data_platform_orders_header_data` (`OrderID`),
-    CONSTRAINT `DataPlatformOrdersHeaderDocDataDocType_fk` FOREIGN KEY (`DocType`) REFERENCES `data_platform_doc_type_doc_type_data` (`DocType`),
-    CONSTRAINT `DataPlatformOrdersHeaderDocDataDocIssuerBusinessPartner_fk` FOREIGN KEY (`DocIssuerBusinessPartner`) REFERENCES `data_platform_business_partner_general_data` (`BusinessPartner`)
+    CONSTRAINT `DPFMOrdersHeaderDocData_fk` FOREIGN KEY (`OrderID`) REFERENCES `data_platform_orders_header_data` (`OrderID`),
+    CONSTRAINT `DPFMOrdersHeaderDocDataDocType_fk` FOREIGN KEY (`DocType`) REFERENCES `data_platform_doc_type_doc_type_data` (`DocType`),
+    CONSTRAINT `DPFMOrdersHeaderDocDataDocIssuerBusinessPartner_fk` FOREIGN KEY (`DocIssuerBusinessPartner`) REFERENCES `data_platform_business_partner_general_data` (`BusinessPartner`)
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

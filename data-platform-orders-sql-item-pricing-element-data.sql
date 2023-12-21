@@ -7,7 +7,7 @@ CREATE TABLE `data_platform_orders_item_pricing_element_data`
   `Buyer`                       int(12) NOT NULL,
   `Seller`                      int(12) NOT NULL,
   `ConditionRecord`             int(12) NOT NULL,
-  `ConditionSequentialNumber`   int(3) NOT NULL,
+  `ConditionSequentialNumber`   int(2) NOT NULL,
   `ConditionType`               varchar(4) NOT NULL,
   `PricingDate`                 date NOT NULL,
   `ConditionRateValue`          float(13) NOT NULL,
@@ -28,8 +28,8 @@ CREATE TABLE `data_platform_orders_item_pricing_element_data`
   
   PRIMARY KEY (`OrderID`, `OrderItem`, `PricingProcedureCounter`),
     
-  CONSTRAINT `DataPlatformOrdersItemPricingElementData_fk` FOREIGN KEY (`OrderID`, `OrderItem`) REFERENCES `data_platform_orders_item_data` (`OrderID`, `OrderItem`),
-  CONSTRAINT `DataPlatformOrdersItemPricingElementDataSCRID_fk` FOREIGN KEY (`SupplyChainRelationshipID`, `Buyer`, `Seller`) REFERENCES `data_platform_scr_general_data` (`SupplyChainRelationshipID`, `Buyer`, `Seller`)
+  CONSTRAINT `DPFMOrdersItemPricingElementData_fk` FOREIGN KEY (`OrderID`, `OrderItem`) REFERENCES `data_platform_orders_item_data` (`OrderID`, `OrderItem`),
+  CONSTRAINT `DPFMOrdersItemPricingElementDataSCRID_fk` FOREIGN KEY (`SupplyChainRelationshipID`, `Buyer`, `Seller`) REFERENCES `data_platform_scr_general_data` (`SupplyChainRelationshipID`, `Buyer`, `Seller`)
   
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

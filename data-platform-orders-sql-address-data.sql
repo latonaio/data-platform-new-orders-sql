@@ -14,8 +14,8 @@ CREATE TABLE `data_platform_orders_address_data`
     
     PRIMARY KEY (`OrderID`, `AddressID`),
     
-    CONSTRAINT `DataPlatformOrdersAddressData_fk` FOREIGN KEY (`OrderID`) REFERENCES `data_platform_orders_header_data` (`OrderID`),
-    CONSTRAINT `DataPlatformOrdersAddressDataAddressID_fk` FOREIGN KEY (`AddressID`) REFERENCES `data_platform_address_address_data` (`AddressID`)
+    CONSTRAINT `DPFMOrdersAddressData_fk` FOREIGN KEY (`OrderID`) REFERENCES `data_platform_orders_header_data` (`OrderID`),
+    CONSTRAINT `DPFMOrdersAddressDataAddressID_fk` FOREIGN KEY (`AddressID`) REFERENCES `data_platform_address_address_data` (`AddressID`)
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

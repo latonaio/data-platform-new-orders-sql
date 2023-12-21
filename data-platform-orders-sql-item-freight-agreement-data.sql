@@ -27,10 +27,10 @@ CREATE TABLE `data_platform_orders_item_freight_agreement_data`
 
   PRIMARY KEY (`OrderID`, `OrderItem`, `OrderItemFreightAgreement`),
     
-  CONSTRAINT `DataPlatformOrdersItemFreightAgreementData_fk` FOREIGN KEY (`OrderID`, `OrderItem`) REFERENCES `data_platform_orders_item_data` (`OrderID`, `OrderItem`),
-  -- CONSTRAINT `DataPlatformOrdersItemFreightAgreementDataFreightAgreementItem_fk` FOREIGN KEY (`FreightAgreement`, `FreightAgreementItem`) REFERENCES `data_platform_freight_agreement_item_data` (`FreightAgreement`, `FreightAgreementItem`),
+  CONSTRAINT `DPFMOrdersItemFreightAgreementData_fk` FOREIGN KEY (`OrderID`, `OrderItem`) REFERENCES `data_platform_orders_item_data` (`OrderID`, `OrderItem`),
+  -- CONSTRAINT `DPFMOrdersItemFreightAgreementDataFreightAgreementItem_fk` FOREIGN KEY (`FreightAgreement`, `FreightAgreementItem`) REFERENCES `data_platform_freight_agreement_item_data` (`FreightAgreement`, `FreightAgreementItem`),
   -- too long
-  CONSTRAINT `DataPlatformOrdersItemFreightAgreementDataProduct_fk` FOREIGN KEY (`Product`) REFERENCES `data_platform_product_master_general_data` (`Product`)
+  CONSTRAINT `DPFMOrdersItemFreightAgreementDataProduct_fk` FOREIGN KEY (`Product`) REFERENCES `data_platform_product_master_general_data` (`Product`)
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
