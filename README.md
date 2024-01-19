@@ -16,8 +16,8 @@ data-platform-orders-sql には、sqlの設定ファイルとして、以下の�
 * data-platform-orders-sql-item-doc-data.sql（データ連携基盤 オーダー - 明細文書データ）
 * data-platform-orders-sql-item-pricing-element-data.sql（データ連携基盤 オーダー - 明細価格決定要素データ）
 * data-platform-orders-sql-item-schedule-line-data.sql（データ連携基盤 オーダー - 明細納入日程行データ）
-* data-platform-orders-sql-item-freight-agreement-data.sql（データ連携基盤 オーダー - 明細輸送契約データ）
 * data-platform-orders-sql-partner-data.sql（データ連携基盤 オーダー - 取引先データ）
+* data-platform-orders-sql-plant-data.sql（データ連携基盤 オーダー - プラントデータ）
 * data-platform-orders-sql-address-data.sql（データ連携基盤 オーダー - 住所データ）
 
 ## MySQLのセットアップ / Kubernetesの設定 / SQLテーブルの作成方法
